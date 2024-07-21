@@ -1,0 +1,77 @@
+---
+
+---
+<section>
+  <p class="subheading"> NUESTRA BODA</p>
+  <span class="title"> LAURA</span>
+  <span class="title"> &</span>
+  <span class="title"> HERIBERTO</span>
+  <div class="date">
+    <span class="bordered">DIC</span>
+    <span class="day">21</span>
+    <span class="bordered">2024</span>
+  </div>
+  <div class="schedule">
+    <div class="item">
+      <span class="">2:00 PM</span>
+      <span class="">Ceremonia Civil</span>
+    </div>
+    <div class="item">
+      <span class="">2:30 PM</span>
+      <span class="">Recepción</span>
+    </div>
+  </div>
+</section>
+<style>
+  section {
+    color: #ad873d;
+    width: 100%;
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    row-gap: 20px;
+  }
+  .subheading {
+    font-size: 24px;
+    border-bottom: 1px solid #ad873d;
+    width: 240px;
+    text-align: center;
+  }
+  .title {
+    font-size: 84px;
+  }
+  .date {
+    display: flex;
+    flex-direction: row;
+    font-size: 50px;
+    align-items: center;
+    .day {
+      font-size: 84px;
+      font-weight: bold;
+      padding: 0 20px;
+    }
+    .bordered {
+      border-bottom: 1px solid #ad873d;
+      border-top: 1px solid #ad873d;
+    }
+  }
+  .schedule {
+    display: flex;
+    flex-direction: row;
+    font-size: 36px;
+    text-align: center;
+    
+    .item {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 30px;
+      width: 300px;
+      box-sizing: border-box;
+    }
+    .item:first-child {
+      border-right: 1px solid #ad873d;
+    }
+  }
+</style>
