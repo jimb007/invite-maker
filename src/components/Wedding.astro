@@ -2,28 +2,40 @@
 
 ---
 <section>
-  <p class="subheading"> NUESTRA BODA</p>
-  <span class="title"> LAURA</span>
-  <span class="title"> &</span>
-  <span class="title"> HERIBERTO</span>
-  <div class="date">
-    <span class="bordered">DIC</span>
-    <span class="day">21</span>
-    <span class="bordered">2024</span>
-  </div>
-  <div class="schedule">
-    <div class="item">
-      <span class="">2:00 PM</span>
-      <span class="">Ceremonia Civil</span>
+  <div class="content">
+    <img class="flo8" src="/flo8.svg">
+    <p class="subheading"> NUESTRA BODA</p>
+    <span class="title"> LAURA</span>
+    <span class="title">
+      <img class="flo11" src="/flo11.svg">&<img class="flo12" src="/flo12.svg">
+    </span>
+    <span class="title"> HERIBERTO</span>
+    <div class="date">
+      <span class="bordered">DIC</span>
+      <div class="day">
+        <span>21</span>
+      </div>
+      <!-- <span class="day">21</span> -->
+      <span class="bordered">2024</span>
     </div>
-    <div class="item">
-      <span class="">2:30 PM</span>
-      <span class="">Recepción</span>
+    <div class="schedule">
+      <div class="item">
+        <span class="">2:00 PM</span>
+        <span class="">Ceremonia Civil</span>
+      </div>
+      <div class="item">
+        <span class="">2:30 PM</span>
+        <span class="">Recepción</span>
+      </div>
     </div>
   </div>
+  <img class="flo9" src="/flo9.svg">  
 </section>
 <style>
   section {
+    position: relative;
+  }
+  .content {
     color: #ad873d;
     width: 100%;
     font-weight: 200;
@@ -38,21 +50,31 @@
     border-bottom: 1px solid #ad873d;
     width: 240px;
     text-align: center;
+    padding-bottom: 10px;
   }
   .title {
-    font-size: 84px;
+    font-size: 100px;
   }
   .date {
     display: flex;
     flex-direction: row;
-    font-size: 50px;
+    font-size: 44px;
     align-items: center;
     .day {
-      font-size: 84px;
-      font-weight: bold;
-      padding: 0 20px;
+      padding: 0 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      height: 100px;
+      span {
+        font-size: 150px;
+        line-height: 45px;
+      }
     }
     .bordered {
+      min-width: 100px;
+      text-align: center;
       border-bottom: 1px solid #ad873d;
       border-top: 1px solid #ad873d;
     }
@@ -66,12 +88,27 @@
     .item {
       display: flex;
       flex-direction: column;
-      padding: 10px 30px;
+      padding: 10px 10px;
       width: 300px;
       box-sizing: border-box;
     }
     .item:first-child {
       border-right: 1px solid #ad873d;
     }
+  }
+  .flo8 {
+    width: 150px;
+  }
+  .flo9 {
+    width: 400px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .flo11 {
+    width: 200px;
+  }
+  .flo12 {
+    width: 200px;
   }
 </style>
