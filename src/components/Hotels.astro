@@ -9,22 +9,22 @@ const flores = `https://www.google.com/maps/place/Casa+de+las+flores+hotel+%26+s
     <span>HOSPEDAJE</span>
   </div>
   <div class="hotels">
-    <a class="hotel" href={esmeralda} target="_blank">
+    <div class="hotel">
       <img src="/HotelEsmeralda.avif">
-      <span>HOTEL ESMERALDA</span>
-    </a>
-    <a class="hotel" href={calandrias} target="_blank">
+      <a href={esmeralda} target="_blank">HOTEL ESMERALDA</a>
+    </div>
+    <div class="hotel">
       <img src="/LasCalandrias.avif">
-      <span>HOTEL LAS CALANDRIAS</span>
-    </a>
-    <a class="hotel" href={gardenia} target="_blank">
+      <a href={calandrias} target="_blank">HOTEL LAS CALANDRIAS</a>
+    </div>
+    <div class="hotel">
       <img src="/GrandGardenia.avif">
-      <span>HOTEL GRAND GARDENIA</span>
-    </a>
-    <a class="hotel" href={flores} target="_blank">
+      <a href={gardenia} target="_blank">HOTEL GRAND GARDENIA</a>
+    </div>
+    <div class="hotel">
       <img src="/CasaFlores.avif">
-      <span>HOTEL CASA DE LAS FLORES</span>
-    </a>
+      <a href={flores} target="_blank">HOTEL CASA DE LAS FLORES</a>
+    </div>
   </div>
 </section>
 <style>
@@ -59,10 +59,10 @@ const flores = `https://www.google.com/maps/place/Casa+de+las+flores+hotel+%26+s
     height: 350px;
     object-fit: cover;
     @media (width < 600px) {
-    width: 90%;
+      width: 90%;
+    }
   }
-  }
-  span {
+  a {
     font-size: 30px;
     text-decoration: underline;
     padding-top: 20px;

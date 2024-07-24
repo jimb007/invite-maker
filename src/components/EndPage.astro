@@ -1,9 +1,24 @@
----
-
----
 <section>
-  <img src="/last2.avif">
-    <p>¡LOS ESPERAMOS!</p>
+  <img src="/last.avif">
+  <p class="wait">¡LOS ESPERAMOS!</p>
+  <div class="demo">
+    <div class="days">
+      <span id="days" class="number"></span>
+      <span>DÍAS</span>
+    </div>
+    <div class="days">
+      <span id="hours" class="number"></span>
+      <span>HORAS</span>
+    </div>
+    <div class="days">
+      <span id="minutes" class="number"></span>
+      <span>MINUTOS</span>
+    </div>
+    <div class="days">
+      <span id="seconds" class="number"></span>
+      <span>SEGUNDOS</span>
+    </div>
+  </div>
 </section>
 <style>
   section {
@@ -19,7 +34,7 @@
     object-fit: cover;
     opacity: 0.7;
   }
-  p {
+  .wait {
     position: absolute;
     top: 5%;
     z-index: 10;
@@ -27,5 +42,98 @@
     font-weight: 600;
     text-align: center;
     text-shadow: 1px 1px 3px black;
+    
+    @media (width < 769px) {
+      font-size: 34px;
+    }
+  }
+  .demo {
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    margin-right: 0px;
+    margin-left: 0px;
+    top: 15%;
+    right: unset;
+    bottom: unset;
+    left: 0px;
+    transform: translate(0%, 0%);
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    gap: 20px;
+    justify-content: center;
+    font-size: 24px;
+    @media (width < 969px) {
+      grid-template-columns: 1fr 1fr;
+      place-items: center;
+    }
+    @media (width < 481px) {
+    top: 20%;
+    grid-template-columns: 1fr;
+    }
+  }
+  .days {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15%;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px gray;
+    cursor: default;
+    @media (width < 969px) {
+      font-size: 24px;
+    }
+    @media (width < 481px) {
+      width: 140px;
+      height: 140px;
+    }
+  }
+  .days:hover {
+    box-shadow: 1px 1px 10px black;
+  }
+  .number {
+    font-size: 54px;
+    @media (width < 769px) {
+      font-size: 34px;
+    }
   }
 </style>
+<script>
+  // Set the date we're counting down to
+  var countDownDate = new Date("Dec 21, 2024 14:30:00").getTime();
+
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result in the element with id="demo"
+    // document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    // + minutes + "m " + seconds + "s ";
+    document.getElementById("days").innerHTML = +days;
+    document.getElementById("hours").innerHTML = +hours;
+    document.getElementById("minutes").innerHTML = +minutes;
+    document.getElementById("seconds").innerHTML = +seconds;
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      // document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+</script>
