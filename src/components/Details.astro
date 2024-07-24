@@ -1,35 +1,166 @@
 ---
+interface Props {
+  guests?: number;
+}
 
+const { guests } = Astro.props;
 ---
 <section>
-  <div>
-    <span>Quinta San José, Atlixco, Puebla.</span>
-    <span>Camino a la uvera S/N, Atlixco, Puebla</span>
+  <div class="location">
+    <img class="map" src="/map.svg">
+    <a class="title">Quinta San José, Atlixco, Puebla.</a>
   </div>
-  <div>
-    <div></div>
-    <div>
-      <span>N PERSONAS</span>
-      <span>COCTEL</span>
-      <p>Su asistencia a nuestra boda será
+  <span class="location-description">Camino a la uvera S/N, Atlixco, Puebla</span>
+  <div class="rules">
+    <div class="icons">
+      <img src="/ticket.svg">
+      <img src="/hanger.svg">
+      <img src="/gift.svg">
+    </div>
+    <div class="text">
+      <p class="people">{guests ?? 2} PERSONAS</p>
+      <p class="dressing">COCTEL</p>
+      <p class="gift">Su asistencia a nuestra boda será
         regalo suficiente, pero si desean
         ayudarnos a ahorrar para nuestra
         luna de miel, les dejamos los datos
-        de nuestra cuenta bancaria:</p>
-      <span>LAURA Y HERIBERTO</span>
-      <span>1234 5678 9123</span>
+        de nuestra cuenta bancaria:
+        <br>
+        <br>
+        <span>LAURA Y HERIBERTO</span>
+        <br>
+        <span>1234 5678 9123</span>
+      </p>
     </div>
   </div>
-  <div>
+  <div class="suggestion">
+    <img src="/shoe.svg">
     <span>Le sugerimos llevar un cambio cómodo de zapatos</span>
   </div>
+  <img class="flo10" src="/flo10.svg">
+  <div class="confirm">
+    <span>CONFIRMAR ASISTENCIA AQUÍ</span>
+  </div>
+  <img class="flo13" src="/flo13.svg">
 </section>
-<span>CONFIRMAR ASISTENCIA AQUÍ</span>
 <style>
   section {
     background-color: #455439;
     color: white;
     width: 100%;
-    height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .location {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    .map {
+      width: 100px;
+    }
+    .title {
+      font-size: 54px;
+      text-decoration: underline;
+      text-align: center;
+    }
+  }
+  .location-description {
+    font-size: 34px;
+    text-align: center;
+  }
+  .rules {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 800px;
+    padding: 50px 150px;
+    box-sizing: border-box;
+    
+    .icons {
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      row-gap: 30px;
+      border-right: 3px solid #ad873d;
+      padding-right: 20px;
+
+      img {
+        width: 120px;
+      }
+    }
+    .text {
+      width: 600px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      padding-left: 40px;
+      font-size: 30px;
+      p {
+        margin: 25px 0;
+      }
+
+      .people {
+        font-size: 50px;
+      }
+      .dressing {
+        font-size: 50px;
+      }
+      .gift {
+        display: flex;
+        flex-direction: column;
+        text-align: justify;
+
+        span {
+          text-align: center;
+        }
+      }
+    }
+  }
+  .suggestion {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+    img {
+      width: 120px;
+    }
+    span {
+      font-size: 30px;
+    }
+  }
+  .confirm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 50px;
+    text-align: center;
+    background-color: white;
+    box-sizing: border-box;
+    
+    span {
+      font-size: 44px;
+      text-decoration: underline;
+      color: #ad873d;
+    }
+  }
+  .flo10 {
+    position: absolute;
+    width: 280px;
+    left: 0;
+  }
+  .flo13 {
+    position: absolute;
+    width: 280px;
+    right: 0;
+    bottom: -100px;
   }
 </style>
