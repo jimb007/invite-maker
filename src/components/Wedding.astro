@@ -1,21 +1,20 @@
 ---
-
+const location = `https://www.google.com.mx/maps/place/Jardín+Quinta+San+José/@18.8680522,-98.4303895,17z/data=!3m1!4b1!4m6!3m5!1s0x85cfb3baebbcbd51:0xae5e9be17c308857!8m2!3d18.8680471!4d-98.4278146!16s%2Fg%2F1s049rk7p?entry=tts&g_ep=EgoyMDI0MDYyNC4wKgBIAVAD`;
 ---
 <section>
   <div class="content">
     <img class="flo8" src="/flo8.svg">
     <p class="subheading"> NUESTRA BODA</p>
-    <span class="title"> LAURA</span>
-    <span class="title">
+    <span class="title"> L A U R A</span>
+    <span class="ampersand title">
       <img class="flo11" src="/flo11.svg">&<img class="flo12" src="/flo12.svg">
     </span>
-    <span class="title"> HERIBERTO</span>
+    <span class="title"> H E R I B E R T O</span>
     <div class="date">
       <span class="bordered">DIC</span>
       <div class="day">
         <span>21</span>
       </div>
-      <!-- <span class="day">21</span> -->
       <span class="bordered">2024</span>
     </div>
     <div class="schedule">
@@ -29,7 +28,17 @@
       </div>
     </div>
   </div>
-  <img class="flo9" src="/flo9.svg">  
+  <img class="flo9" src="/flo9.svg">
+  <div class="location">
+    <img class="flo10" src="/flo10.svg">
+    <div class="col">
+      <div class="row">
+        <img class="map" src="/map.svg">
+        <a href={location} target="_blank" class="location-title">Quinta San José, Atlixco, Puebla.</a>
+      </div>
+      <span class="location-description">Camino a la uvera S/N, Atlixco, Puebla</span>
+    </div>
+  </div>
 </section>
 <style>
   section {
@@ -54,12 +63,23 @@
   }
   .title {
     font-size: 100px;
+    @media (width < 969px) {
+      font-size: 50px;
+    }
+  }
+  .ampersand {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
   .date {
     display: flex;
     flex-direction: row;
     font-size: 44px;
     align-items: center;
+    @media (width < 969px) {
+      font-size: 24px;
+    }
     .day {
       padding: 0 10px;
       display: flex;
@@ -67,9 +87,16 @@
       align-items: center;
       justify-content: start;
       height: 100px;
+      @media (width < 969px) {
+        height: 60px;
+      }
       span {
         font-size: 150px;
         line-height: 45px;
+        @media (width < 969px) {
+          font-size: 80px;
+          line-height: 30px;
+        }
       }
     }
     .bordered {
@@ -84,6 +111,9 @@
     flex-direction: row;
     font-size: 36px;
     text-align: center;
+    @media (width < 969px) {
+      font-size: 22px;
+    }
     
     .item {
       display: flex;
@@ -91,9 +121,70 @@
       padding: 10px 10px;
       width: 300px;
       box-sizing: border-box;
+      @media (width < 969px) {
+        min-width: 180px;
+        width: 100%;
+      }
     }
     .item:first-child {
       border-right: 1px solid #ad873d;
+    }
+  }
+  .location {
+    height: 320px;
+    background-color: #ad873d;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    margin-top: 100px;
+    color: white;
+    column-gap: 20%;
+    @media (width < 969px) {
+      column-gap: unset;
+    }
+    .col {
+      padding-left: 30px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      align-items: center;
+      justify-content: center;
+      @media (width < 969px) {
+        padding-left: 0;
+      }
+    }
+    .row {
+      display: flex;
+      flex-direction: row;
+      column-gap: 20px;
+      align-items: center;
+      justify-content: center;
+      @media (width < 969px) {
+        column-gap: 5;
+      }
+    }
+    .map {
+      width: 60px;
+      @media (width < 969px) {
+        width: 40px;
+      }
+    }
+    .location-title {
+      font-size: 54px;
+      text-decoration: underline;
+      color: white;
+      text-align: center;
+      @media (width < 969px) {
+        font-size: 28px;
+      }
+    }
+    .location-description {
+      font-size: 34px;
+      text-align: center;
+      @media (width < 969px) {
+        font-size: 18px;
+      }
     }
   }
   .flo8 {
@@ -104,11 +195,27 @@
     position: absolute;
     top: 0;
     right: 0;
+    @media (width < 969px) {
+      width: 40%;
+    }
+  }
+  .flo10 {
+    width: 200px;
+    @media (width < 969px) {
+      width: 20%;
+      align-self: flex-end;
+    }
   }
   .flo11 {
     width: 200px;
+    @media (width < 969px) {
+      width: 30%;
+    }
   }
   .flo12 {
     width: 200px;
+    @media (width < 969px) {
+      width: 30%;
+    }
   }
 </style>

@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FrontPage from '../components/FrontPage.astro';
+import Hero from '../components/Hero.astro';
+import Wedding from '../components/Wedding.astro';
+import Details from '../components/Details.astro';
+import EndPage from '../components/EndPage.astro';
+import Hotels from '../components/Hotels.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<FrontPage/>
+	<Hero/>
+	<Wedding/>
+	<Details guests={3}/>
+	<Hotels/>
+	<EndPage/>
+</Layout>

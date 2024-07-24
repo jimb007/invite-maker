@@ -6,42 +6,42 @@ interface Props {
 const { guests } = Astro.props;
 ---
 <section>
-  <div class="location">
-    <img class="map" src="/map.svg">
-    <a class="title">Quinta San José, Atlixco, Puebla.</a>
-  </div>
-  <span class="location-description">Camino a la uvera S/N, Atlixco, Puebla</span>
+  <img class="flo13" src="/flo13.svg">
   <div class="rules">
-    <div class="icons">
-      <img src="/ticket.svg">
-      <img src="/hanger.svg">
-      <img src="/gift.svg">
-    </div>
-    <div class="text">
-      <p class="people">{guests ?? 2} PERSONAS</p>
-      <p class="dressing">COCTEL</p>
-      <p class="gift">Su asistencia a nuestra boda será
+    <img class="icon" src="/ticket.svg">
+    <p class="title"><span class="guests">{guests ?? 2}</span> PERSONAS</p>
+    <img class="icon" src="/hanger.svg">
+    <p class="title">COCTEL</p>
+    <img class="icon" src="/gift.svg">
+    <div class="gift">
+      <p>
+        Su asistencia a nuestra boda será
         regalo suficiente, pero si desean
         ayudarnos a ahorrar para nuestra
         luna de miel, les dejamos los datos
         de nuestra cuenta bancaria:
-        <br>
-        <br>
-        <span>LAURA Y HERIBERTO</span>
-        <br>
-        <span>1234 5678 9123</span>
       </p>
+      <p>LAURA Y HERIBERTO</p>
+      <div class="bank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M3 5m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z" />
+          <path d="M3 10l18 0" />
+          <path d="M7 15l.01 0" />
+          <path d="M11 15l2 0" />
+        </svg>
+        <p>1234 5678 9123</p>
+      </div>
     </div>
   </div>
   <div class="suggestion">
     <img src="/shoe.svg">
     <span>Le sugerimos llevar un cambio cómodo de zapatos</span>
   </div>
-  <img class="flo10" src="/flo10.svg">
-  <div class="confirm">
+  <img class="flo14" src="/flo14.svg">
+  <a href="https://wa.me/2216538080" target="_blank" class="confirm">
     <span>CONFIRMAR ASISTENCIA AQUÍ</span>
-  </div>
-  <img class="flo13" src="/flo13.svg">
+  </a>
 </section>
 <style>
   section {
@@ -53,73 +53,71 @@ const { guests } = Astro.props;
     align-items: center;
     position: relative;
   }
-  .location {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: 100px;
-    .map {
-      width: 100px;
-    }
-    .title {
-      font-size: 54px;
-      text-decoration: underline;
-      text-align: center;
-    }
-  }
-  .location-description {
-    font-size: 34px;
-    text-align: center;
-  }
   .rules {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
+    justify-content: center; */
+    display: grid;
+    grid-template-rows: 200px 200px 300px;
+    /* grid-template-columns: 1fr 2fr; */
+    grid-template-columns: 200px 400px;
+    align-items: center;
     justify-content: center;
     width: 100%;
     height: 800px;
     padding: 50px 150px;
     box-sizing: border-box;
+    @media (width < 769px) {
+      padding: 50px 5%;
+      grid: 100px 100px 200px / 1fr 2fr;
+      align-items: center;
+      justify-content: center;
+      height: 500px;
+    }
     
-    .icons {
-      width: 200px;
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
-      row-gap: 30px;
-      border-right: 3px solid #ad873d;
-      padding-right: 20px;
-
-      img {
-        width: 120px;
+    .icon {
+      width: 120px;
+      @media (width < 480px) {
+        width: 80px;
       }
     }
-    .text {
-      width: 600px;
+
+    .title {
+      font-size: 50px;
+      margin: 0;
+      @media (width < 769px) {
+        font-size: 30px;
+      }
+    }
+    .guests {
+      font-size: 100px;
+      @media (width < 769px) {
+        font-size: 60px;
+      }
+    }
+
+    .people {
+      font-size: 50px;
+      margin: 0;
+
+      span {
+        font-size: 80px;
+      }
+    }
+    .dressing {
+      font-size: 50px;
+      margin: 0;
+    }
+    .gift {
       display: flex;
       flex-direction: column;
-      row-gap: 20px;
-      padding-left: 40px;
-      font-size: 30px;
-      p {
-        margin: 25px 0;
-      }
-
-      .people {
-        font-size: 50px;
-      }
-      .dressing {
-        font-size: 50px;
-      }
-      .gift {
-        display: flex;
-        flex-direction: column;
-        text-align: justify;
-
-        span {
-          text-align: center;
-        }
-      }
+      align-items: center;
+      text-align: justify;
+    }
+    .bank {
+      display: flex;
+      column-gap: 10px;
+      place-items: center;
     }
   }
   .suggestion {
@@ -128,39 +126,54 @@ const { guests } = Astro.props;
     column-gap: 20px;
     padding-bottom: 20px;
     align-items: center;
+    @media (width < 769px) {
+      padding: 20px;
+    }
     img {
       width: 120px;
+      @media (width < 769px) {
+        width: 80px;
+      }
     }
     span {
       font-size: 30px;
+      @media (width < 769px) {
+        font-size: 20px;
+      }
     }
   }
   .confirm {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    place-items: center;
     width: 100%;
     padding: 50px;
     text-align: center;
     background-color: white;
     box-sizing: border-box;
     
-    span {
-      font-size: 44px;
-      text-decoration: underline;
-      color: #ad873d;
+    font-size: 44px;
+    text-decoration: underline;
+    color: #ad873d;
+    @media (width < 769px) {
+      font-size: 24px;
     }
-  }
-  .flo10 {
-    position: absolute;
-    width: 280px;
-    left: 0;
   }
   .flo13 {
     position: absolute;
     width: 280px;
+    left: 0;
+    @media (width < 969px) {
+      width: 20%;
+    }
+  }
+  .flo14 {
+    position: absolute;
+    width: 280px;
     right: 0;
-    bottom: -100px;
+    bottom: 0;
+    @media (width < 1200px) {
+      width: 15%;
+    }
   }
 </style>
