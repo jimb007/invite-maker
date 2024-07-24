@@ -1,24 +1,30 @@
+---
+const esmeralda = `https://www.google.com/maps/place/La+Esmeralda/@18.8798314,-98.4388321,15z/data=!4m9!3m8!1s0x85cfb39bdf15dc63:0xcac2fbebda171487!5m2!4m1!1i2!8m2!3d18.8836021!4d-98.4332199!16s%2Fg%2F12qh4_826?entry=ttu`;
+const calandrias = `https://www.google.com/maps/place/Las+Calandrias+de+Atlixco/@18.8906926,-98.4267924,15z/data=!4m9!3m8!1s0x85cfb38e32a75091:0x1164070c6809bb6e!5m2!4m1!1i2!8m2!3d18.8906926!4d-98.4267924!16s%2Fg%2F1tdv_6n8?entry=tts&g_ep=EgoyMDI0MDcwMS4wKgBIAVAD`;
+const gardenia = `https://www.google.com/maps/place/Grand+Gardenia/@18.8946849,-98.4263131,17z/data=!4m9!3m8!1s0x85cfb3808c153a79:0xa2d4be44f2480fd2!5m2!4m1!1i2!8m2!3d18.8946798!4d-98.4237382!16s%2Fg%2F11c5xm6fl7?entry=tts&g_ep=EgoyMDI0MDcwMS4wKgBIAVAD`;
+const flores = `https://www.google.com/maps/place/Casa+de+las+flores+hotel+%26+spa/@18.8847237,-98.4355322,16z/data=!4m9!3m8!1s0x85cfb3d8d80cb277:0x2cf84fda572e2a92!5m2!4m1!1i2!8m2!3d18.8849408!4d-98.4305417!16s%2Fg%2F11h5990zbt?entry=tts&g_ep=EgoyMDI0MDcwMS4wKgBIAVAD`;
+---
 <section>
   <div class="banner">
     <span>HOSPEDAJE</span>
   </div>
   <div class="hotels">
-    <div class="hotel">
+    <a class="hotel" href={esmeralda} target="_blank">
       <img src="/HotelEsmeralda.avif">
       <span>HOTEL ESMERALDA</span>
-    </div>
-    <div class="hotel">
+    </a>
+    <a class="hotel" href={calandrias} target="_blank">
       <img src="/LasCalandrias.avif">
       <span>HOTEL LAS CALANDRIAS</span>
-    </div>
-    <div class="hotel">
+    </a>
+    <a class="hotel" href={gardenia} target="_blank">
       <img src="/GrandGardenia.avif">
       <span>HOTEL GRAND GARDENIA</span>
-    </div>
-    <div class="hotel">
+    </a>
+    <a class="hotel" href={flores} target="_blank">
       <img src="/CasaFlores.avif">
       <span>HOTEL CASA DE LAS FLORES</span>
-    </div>
+    </a>
   </div>
 </section>
 <style>
@@ -34,12 +40,13 @@
   font-size: 64px;
 }
 .hotels {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid: 1fr 1fr / 1fr 1fr;
   padding: 50px;
+  @media (width < 1200px) {
+    grid-template-columns: 1fr;
+    padding: 5%;
+  }
 }
 .hotel {
   display: flex;
@@ -48,9 +55,12 @@
   margin-bottom: 60px;
 
   img {
-    width: 600px;
+    width: 500px;
     height: 350px;
     object-fit: cover;
+    @media (width < 600px) {
+    width: 90%;
+  }
   }
   span {
     font-size: 30px;
