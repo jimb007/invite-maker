@@ -36,20 +36,20 @@
   }
   .wait {
     position: absolute;
-    top: 5%;
+    top: 4%;
     z-index: 10;
     font-size: 64px;
     font-weight: 600;
     text-align: center;
-    text-shadow: 1px 1px 3px black;
+    text-shadow: 1px 1px 3px gray;
     
     @media (width < 769px) {
+      top: 3%;
       font-size: 34px;
     }
   }
   .demo {
     width: 100%;
-    height: 600px;
     position: absolute;
     margin-right: 0px;
     margin-left: 0px;
@@ -64,12 +64,12 @@
     justify-content: center;
     font-size: 24px;
     @media (width < 969px) {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       place-items: center;
     }
-    @media (width < 481px) {
-    top: 20%;
-    grid-template-columns: 1fr;
+    @media (width < 599px) {
+      font-size: 16px;
+      gap: 0px;
     }
   }
   .days {
@@ -86,11 +86,19 @@
     box-shadow: 1px 1px 5px gray;
     cursor: default;
     @media (width < 969px) {
+      width: 150px;
+      height: 150px;
       font-size: 24px;
     }
+    @media (width < 599px) {
+      width: 100px;
+      height: 100px;
+      font-size: 18px;
+    }
     @media (width < 481px) {
-      width: 140px;
-      height: 140px;
+      width: 80px;
+      height: 80px;
+      font-size: 14px;
     }
   }
   .days:hover {
@@ -100,6 +108,9 @@
     font-size: 54px;
     @media (width < 769px) {
       font-size: 34px;
+    }
+    @media (width < 599px) {
+      font-size: 24px;
     }
   }
 </style>
@@ -122,9 +133,7 @@
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Display the result in the element with id="demo"
-    // document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-    // + minutes + "m " + seconds + "s ";
+    // Display the result in the corresponding elements using id
     document.getElementById("days")!.innerHTML = days.toString();
     document.getElementById("hours")!.innerHTML = hours.toString();
     document.getElementById("minutes")!.innerHTML = minutes.toString();
