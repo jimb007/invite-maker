@@ -15,7 +15,9 @@ const location = `https://www.google.com.mx/maps/place/Jardín+Quinta+San+José/
       <div class="day">
         <span>21</span>
       </div>
-      <span class="bordered">2024</span>
+      <div class="bordered">
+        <span class="year">2024</span>
+      </div>
     </div>
     <div class="schedule">
       <div class="item">
@@ -31,12 +33,13 @@ const location = `https://www.google.com.mx/maps/place/Jardín+Quinta+San+José/
   <img class="flo9" src="/flo9.svg">
   <div class="location">
     <img class="flo10" src="/flo10.svg">
-    <div class="col">
-      <div class="row">
-        <img class="map" src="/map.svg">
-        <a href={location} target="_blank" class="location-title">Quinta San José, Atlixco, Puebla.</a>
-      </div>
+    <div class="location-column">
+      <span class="location-title">Quinta San José, Atlixco, Puebla.</span>
       <span class="location-description">Camino a la uvera S/N, Atlixco, Puebla</span>
+      <a href={location} target="_blank" class="location-map">
+        <img class="map-icon" src="/map.svg">
+        VER MAPA
+      </a>
     </div>
   </div>
 </section>
@@ -77,6 +80,7 @@ const location = `https://www.google.com.mx/maps/place/Jardín+Quinta+San+José/
     flex-direction: row;
     font-size: 44px;
     align-items: center;
+    margin-top: 20px;
     @media (width < 969px) {
       font-size: 24px;
     }
@@ -105,12 +109,17 @@ const location = `https://www.google.com.mx/maps/place/Jardín+Quinta+San+José/
       border-bottom: 1px solid #ad873d;
       border-top: 1px solid #ad873d;
     }
+    .year {
+      font-size: 64px;
+      line-height: 40px;   
+    }
   }
   .schedule {
     display: flex;
     flex-direction: row;
     font-size: 36px;
     text-align: center;
+    margin-top: 20px;
     @media (width < 969px) {
       font-size: 22px;
     }
@@ -118,7 +127,6 @@ const location = `https://www.google.com.mx/maps/place/Jardín+Quinta+San+José/
     .item {
       display: flex;
       flex-direction: column;
-      padding: 10px 10px;
       width: 300px;
       box-sizing: border-box;
       @media (width < 969px) {
@@ -137,55 +145,56 @@ const location = `https://www.google.com.mx/maps/place/Jardín+Quinta+San+José/
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 100px;
+    /* margin-top: 100px; */
     color: white;
     column-gap: 20%;
     position: relative;
     @media (width < 969px) {
       column-gap: unset;
     }
-    .col {
-      padding-left: 30px;
+    .location-column {
+      /* padding-left: 30px; */
       display: flex;
       flex-direction: column;
       row-gap: 20px;
       align-items: center;
       justify-content: center;
-      @media (width < 969px) {
-        padding-left: 0;
-      }
-    }
-    .row {
-      display: flex;
-      flex-direction: row;
-      column-gap: 20px;
-      align-items: center;
-      justify-content: center;
-      @media (width < 969px) {
-        column-gap: 5;
-      }
-    }
-    .map {
-      width: 60px;
-      @media (width < 969px) {
-        width: 40px;
+      @media (width < 760px) {
+        /* padding-left: 0; */
       }
     }
     .location-title {
       font-size: 54px;
-      text-decoration: underline;
       color: white;
       text-align: center;
-      @media (width < 969px) {
+      @media (width < 760px) {
         font-size: 28px;
-        width: 50%;
+        /* width: 50%; */
       }
     }
     .location-description {
       font-size: 34px;
       text-align: center;
-      @media (width < 969px) {
+      @media (width < 760px) {
         font-size: 18px;
+      }
+    }
+    .location-map {
+      font-size: 44px;
+      text-decoration: underline;
+      color: white;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      @media (width < 760px) {
+        font-size: 20px;
+      }
+    }
+    .map-icon {
+      width: 40px;
+      @media (width < 969px) {
+        width: 20px;
       }
     }
   }

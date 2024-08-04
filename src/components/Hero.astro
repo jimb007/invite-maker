@@ -10,72 +10,40 @@
 </section>
 <style>
   section {
-    color: #455439;
+    color: #e0cb9d;
     position: relative;
     width: 100%;
     overflow: hidden;
-    @media (width < 600px) {      
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    display: flex;
+    flex-direction: column;
   }
   .hero {
     width: 100%;
     object-fit: contain;
-    opacity: 0.7;
   }
   .heroText {
-    position: absolute;
-    bottom: 15%;
-    right: 50px;
-    z-index: 10;
+    height: 150px;
+    background-color: #455439;
     font-size: 36px;
-    font-weight: 600;
-    text-align: center;
+    font-weight: 400;
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: center;
+    justify-content: center;
     text-shadow: 1px 1px 3px gray;
     
     @media (width < 1200px) {      
       font-size: 24px;
-      width: 400px;
     }
     @media (width < 600px) {      
       font-size: 18px;
-      right: 0px;
-      width: 60%;
-      bottom: 10%;
     }
     
     p {
-      padding-right: 100px;
-      width: 500px;
-      margin: 0 0 20px 0;
-      @media (width < 1200px) {      
-        padding-right: 0;
-        width: 400px;
-      }
-      @media (width < 600px) {      
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-      }
+      margin: 0;
     }
     span {
-      padding-right: 100px;
-      width: 500px;
       font-style: italic;
-      @media (width < 1200px) {      
-        padding-right: 0;
-        width: 400px;
-      }
-      @media (width < 600px) {      
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-      }
     }
   }
 </style>
