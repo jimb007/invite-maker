@@ -111,7 +111,11 @@ const location = `https://www.google.com.mx/maps/place/Jardín+Quinta+San+José/
     }
     .year {
       font-size: 64px;
-      line-height: 40px;   
+      line-height: 40px; 
+      @media (width < 969px) {
+        font-size: 44px;
+        line-height: 20px; 
+      }
     }
   }
   .schedule {

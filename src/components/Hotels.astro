@@ -5,56 +5,56 @@ const gardenia = `https://www.google.com/maps/place/Grand+Gardenia/@18.8946849,-
 const flores = `https://www.google.com/maps/place/Casa+de+las+flores+hotel+%26+spa/@18.8847237,-98.4355322,16z/data=!4m9!3m8!1s0x85cfb3d8d80cb277:0x2cf84fda572e2a92!5m2!4m1!1i2!8m2!3d18.8849408!4d-98.4305417!16s%2Fg%2F11h5990zbt?entry=tts&g_ep=EgoyMDI0MDcwMS4wKgBIAVAD`;
 ---
 <section>
+  <img class="flo15" src="flo15.svg">
   <div class="banner">
     <span>HOSPEDAJE</span>
   </div>
-  <a>HOTEL GRAND GARDENIA</a>
-  <img src="/GrandGardenia.avif">
-  <p>Dirección: Priv. de los
-    Fresnos 1703, Flores Magón,
-    Campestre la Moraleda,
-    74294 Atlixco, Pue.
+  <div class="main-hotel">
+    <a class="title" href={gardenia} target="_blank">HOTEL GRAND GARDENIA</a>
+    <img class="image" src="/GrandGardenia.avif">
+    <p><strong>Dirección:</strong> Priv. de los
+      Fresnos 1703, Flores Magón,
+      Campestre la Moraleda,
+      74294 Atlixco, Pue.
+      <br><br>
+      <strong>Teléfono:</strong> 222 323 9511
     </p>
-    <p>Teléfono: 222 323 9511</p>
     <p>Reserva por teléfono mencionando que son invitados de
-      la “BODA: LAU & HERI” para una tarifa preferencial.
-      </p>
-    <p>Otras opciones</p>
-    <ul>
-      <li>
-        <a>HOTEL CASA DE LAS FLORES</a>
-        <span>Teléfono: 244 150 77016</span>
-      </li>
-      <li>
-        <a>HOTEL ESMERALDA</a>
-        <span>Teléfono: 244 443 8061</span>
-      </li>
-      <li>
-        <a>HOTEL LAS CALANDRIAS</a>
-        <span>Teléfono: 244 446 2020</span>
-      </li>
-    </ul>
-    <p></p>
-  <!-- <div class="hotels">
-    <div class="hotel">
-      <img src="/HotelEsmeralda.avif">
-      <a href={esmeralda} target="_blank">HOTEL ESMERALDA</a>
+    la <strong>“BODA: LAU & HERI”</strong> para una tarifa preferencial.
+    </p>
+    <div class="other">Otras opciones:<br><br>
+      <div class="title">
+        <img src="/home.svg">
+        <a class="hotel" href={flores} target="_blank">HOTEL CASA DE LAS FLORES</a><br>
+      </div>
+      <span class="phone"><strong>Teléfono:</strong> 244 150 77016</span>
+      <br><br>
+      <div class="title">
+        <img src="/home.svg">
+        <a class="hotel" href={esmeralda} target="_blank">HOTEL ESMERALDA</a><br>
+      </div>
+      <span class="phone"><strong>Teléfono:</strong> 244 443 8061</span>
+      <br><br>
+      <div class="title">
+        <img src="/home.svg">
+        <a class="hotel" href={calandrias} target="_blank">HOTEL LAS CALANDRIAS</a><br>
+      </div>
+      <span class="phone"><strong>Teléfono:</strong> 244 446 2020</span>
+      <br>
     </div>
-    <div class="hotel">
-      <img src="/LasCalandrias.avif">
-      <a href={calandrias} target="_blank">HOTEL LAS CALANDRIAS</a>
-    </div>
-    <div class="hotel">
-      <img src="/GrandGardenia.avif">
-      <a href={gardenia} target="_blank">HOTEL GRAND GARDENIA</a>
-    </div>
-    <div class="hotel">
-      <img src="/CasaFlores.avif">
-      <a href={flores} target="_blank">HOTEL CASA DE LAS FLORES</a>
-    </div>
-  </div> -->
+  </div>
 </section>
 <style>
+section {
+  color: #ad873d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    margin: 0;
+    padding: 0 5%;
+  }
+}
 .banner {
   display: flex;
   flex-direction: column;
@@ -65,6 +65,9 @@ const flores = `https://www.google.com/maps/place/Casa+de+las+flores+hotel+%26+s
   width: 100%;
   height: 200px;
   font-size: 64px;
+  @media (width < 760px) {
+    font-size: 44px;
+  }
 }
 .hotels {
   display: grid;
@@ -75,24 +78,57 @@ const flores = `https://www.google.com/maps/place/Casa+de+las+flores+hotel+%26+s
     padding: 5%;
   }
 }
-.hotel {
+.main-hotel {
+  width: 600px;
+  margin: 30px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 60px;
-
-  img {
-    width: 500px;
-    height: 350px;
-    object-fit: cover;
-    @media (width < 600px) {
-      width: 90%;
+  justify-content: center;
+  gap: 20px;
+  font-size: 24px;
+  @media (width < 760px) {
+    font-size: 18px;
+    width: 100%;
+  }
+  .title {
+    font-size: 34px;
+    color: #ad873d;
+    text-decoration: underline;
+    @media (width < 760px) {
+      font-size: 24px;
     }
   }
-  a {
-    font-size: 30px;
-    text-decoration: underline;
-    padding-top: 20px;
+  .image {
+    width: 600px;
+    max-width: 90%;
+  }
+  .other {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 30px;
+    padding: 0 5%;
+    .title {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+    }
+    .hotel {
+      font-size: 28px;
+      text-decoration: underline;
+      color: #ad873d;
+    }
+    .phone {
+      padding-left: 40px;
+    }
+  }
+}
+.flo15 {
+  width: 150px;
+  position: absolute;
+  left: 0;
+  @media (width < 760px) {
+    width: 20%;
   }
 }
 </style>
