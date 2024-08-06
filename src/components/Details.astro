@@ -24,12 +24,13 @@ const giftLink = `https://www.elpalaciodehierro.com/buscar?eventId=388862`;
       Mesa de regalos:<br>El Palacio de Hierro<br>
       No. de evento: <a href={giftLink}>388862</a>
     </p>
-    <div class="empty"></div>
-    <span class="or">Ó</span>
     <div class="icon-container">
       <img class="icon" src="/card.svg">
     </div>
-    <p class="gift">HERIBERTO GARCÍA LARA<br>BBVA: 4152 3139 1197 8513
+    <p class="gift">
+      HERIBERTO GARCÍA LARA<br>
+      Tarjeta BBVA: <br>
+      4152 3139 1197 8513
     </p>
 
   </div>
@@ -54,7 +55,7 @@ const giftLink = `https://www.elpalaciodehierro.com/buscar?eventId=388862`;
   }
   .rules {
     display: grid;
-    grid-template-rows: 200px 200px 200px 80px 200px;
+    grid-template-rows: 200px 200px 200px 200px;
     grid-template-columns: 200px 400px;
     align-items: start;
     justify-content: center;
@@ -62,11 +63,11 @@ const giftLink = `https://www.elpalaciodehierro.com/buscar?eventId=388862`;
     padding: 50px 150px;
     box-sizing: border-box;
     @media (width < 769px) {
-      padding: 40px 18% 0 18%;
-      grid: 100px 100px 120px 40px 120px / 100px 1fr;
+      padding: 40px 5% 0 15%;
+      grid: 100px 100px 120px 120px / 100px 1fr;
       align-items: center;
       justify-content: center;
-      height: 560px;
+      height: 500px;
     }
     
     .icon-container {
@@ -95,7 +96,6 @@ const giftLink = `https://www.elpalaciodehierro.com/buscar?eventId=388862`;
         }
       }
     }
-
 
     .title {
       font-size: 50px;
@@ -146,30 +146,6 @@ const giftLink = `https://www.elpalaciodehierro.com/buscar?eventId=388862`;
 
       a {
         color: white;
-      }
-    }
-    .empty {
-      height: 80px;
-      width: auto;
-      border-right: #ad873d solid 1px;
-      box-sizing: border-box;
-      @media (width < 769px) {
-        height: 40px;
-        padding-top: 20px;
-      }
-      @media (width < 480px) {
-        width: 80px;
-      }
-    }
-    .or {
-      padding-left: 30px;
-      font-size: 30px;
-      @media (width < 769px) {
-        font-size: 20px;
-      }
-      @media (width < 480px) {
-        padding-left: 0;
-        font-size: 20px;
       }
     }
   }
