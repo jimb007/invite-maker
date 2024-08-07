@@ -28,24 +28,27 @@ export default function ReactGallery() {
   }
 
   return (
-    <section className="container">
-      { !isFullscreen &&
-        imagesArray.map((image, index) => (
-          <img key={index} onClick={() => showFullscreen(image)} className={`gallery`} src={`${image}.avif`}/>
-        ))
-      }
-      { 
-        isFullscreen &&
-        <div className="fullScreen">
-          <img
-            className="fullImage" 
-            src={currentImage}/>
-            <button
-              className="closeButton" 
-              onClick={() => onClose()}
-            ><img src="close.svg"/></button>
-        </div>
+    <section className="reactGalleryContainer">
+      <h1 className="reactGalleryTitle">Galería de fotos</h1>
+      <div className="reactGalleryImages">
+        { !isFullscreen &&
+          imagesArray.map((image, index) => (
+            <img key={index} onClick={() => showFullscreen(image)} className="reactGalleryGallery" src={`${image}.avif`}/>
+          ))
         }
+        { 
+          isFullscreen &&
+          <div className="reactGalleryFullScreen">
+            <img
+              className="reactGalleryFullImage" 
+              src={currentImage}/>
+              <button
+                className="reactGalleryCloseButton" 
+                onClick={() => onClose()}
+              ><img src="close.svg"/></button>
+          </div>
+          }
+      </div>
     </section>
   )
 }
