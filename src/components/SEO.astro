@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonical?: string;
+}
+const { title, description, image = 'https://laurayheriberto-ramiro-pats-projects.vercel.app/hero2.avif', canonical } = Astro.props;
+
+const determineCanonicalURL = () => {
+	if (Astro.url.host.includes("localhost")) return "http://localhost:4321"
+	return canonical || Astro.url.pathname
+}
+
+const canonicalURL = new URL(determineCanonicalURL(), Astro.site)
+---
+<link rel="canonical" href={canonicalURL} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:site_name" content="Laura y Heriberto" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_ES" />

@@ -5,11 +5,13 @@ interface Props {
 
 const { title } = Astro.props;
 import '@fontsource-variable/playfair-display';
+import SEO from '../components/SEO.astro';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
+		<SEO title='La boda de Lau y Heri' description='Invitación digital para la boda de Laura y Heriberto'/>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
@@ -27,25 +29,13 @@ import '@fontsource-variable/playfair-display';
 		--alpine: #ad873d;
 		--sapling: #e0cb9d;
 		--white: white;
-		/* --accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		); */
 	}
 	body {
 		margin: 0;
 	}
 	html {
-		/* font-family: system-ui, sans-serif; */
 		font-family: 'Playfair Display Variable', serif;
 		font-weight: 200;
-		/* background: #13151a; */
-		background-size: 224px;
 	}
 	code {
 		font-family:
